@@ -21,7 +21,6 @@ const pages = [
   { name: "Feedback", path: "/feedback" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
