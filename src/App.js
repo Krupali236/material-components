@@ -5,6 +5,7 @@ import InputComponents from "./routes/Input";
 import DataDisplayComponents from "./routes/DataDisplay";
 import Home from "./routes/Home";
 import Feedback from "./routes/Feedback";
+import Navigation from "./routes/Navigation";
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,15 @@ function App() {
         <>
           <ResponsiveAppBar />
           <Feedback />
+        </>
+      ),
+    },
+    {
+      path: "/navigation",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <Navigation />
         </>
       ),
     },

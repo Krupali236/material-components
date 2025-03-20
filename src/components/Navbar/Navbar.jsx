@@ -19,6 +19,7 @@ const pages = [
   { name: "Inputs", path: "/input" },
   { name: "Data Display", path: "/datadisplay" },
   { name: "Feedback", path: "/feedback" },
+  { name: "Navigation", path: "/navigation" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function ResponsiveAppBar() {
