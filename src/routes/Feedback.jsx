@@ -1,11 +1,9 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
+import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
-// import { green } from "@mui/material/colors";
 import Box from "@mui/material/Box";
 import Alert from "../pages/Alert";
 import Backdrop from "../pages/Backdrop";
@@ -55,29 +53,31 @@ export default function Feedback() {
     <div style={{ margin: "15px" }}>
       <Box
         sx={{
+          flexGrow: 1,
+          maxWidth: { lg: "100%", xs: "100%", sm: "100%" },
           bgcolor: "background.paper",
-          width: "100%",
-          position: "relative",
-          height: "100%",
         }}
       >
-        <AppBar position="static" color="default">
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="fullWidth"
-            aria-label="action tabs example"
-          >
-            <Tab label="Alert" {...a11yProps(0)} />
-            <Tab label="Backdrop" {...a11yProps(1)} />
-            <Tab label="Dialog" {...a11yProps(2)} />
-            <Tab label="Progress" {...a11yProps(3)} />
-            <Tab label="Skeleton" {...a11yProps(4)} />
-            <Tab label="Snackbar" {...a11yProps(5)} />
-          </Tabs>
-        </AppBar>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons
+          aria-label="visible arrows tabs example"
+          sx={{
+            [`& .${tabsClasses.scrollButtons}`]: {
+              "&.Mui-disabled": { opacity: 0.3 },
+            },
+          }}
+        >
+          <Tab label="Alert" {...a11yProps(0)} />
+          <Tab label="Backdrop" {...a11yProps(1)} />
+          <Tab label="Dialog" {...a11yProps(2)} />
+          <Tab label="Progress" {...a11yProps(3)} />
+          <Tab label="Skeleton" {...a11yProps(4)} />
+          <Tab label="Snackbar" {...a11yProps(5)} />
+        </Tabs>
+
         <TabPanel value={value} index={0} dir={theme.direction}>
           <Alert />
         </TabPanel>

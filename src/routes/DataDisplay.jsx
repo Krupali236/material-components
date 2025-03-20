@@ -1,11 +1,9 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
+import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
-// import { green } from "@mui/material/colors";
 import Box from "@mui/material/Box";
 import Avatar from "../pages/Avatar";
 import Badge from "../pages/Badge";
@@ -59,33 +57,35 @@ export default function DataDisplayComponents() {
     <div style={{ margin: "15px" }}>
       <Box
         sx={{
+          flexGrow: 1,
+          maxWidth: { lg: "100%", xs: "100%", sm: "100%" },
           bgcolor: "background.paper",
-          width: "100%",
-          position: "relative",
-          height: "100%",
         }}
       >
-        <AppBar position="static" color="default">
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="fullWidth"
-            aria-label="action tabs example"
-          >
-            <Tab label="Avatar" {...a11yProps(0)} />
-            <Tab label="Badge" {...a11yProps(1)} />
-            <Tab label="Chip" {...a11yProps(2)} />
-            <Tab label="Divider" {...a11yProps(3)} />
-            <Tab label="Icons" {...a11yProps(4)} />
-            <Tab label="Material Icons" {...a11yProps(5)} />
-            <Tab label="List" {...a11yProps(6)} />
-            <Tab label="Table" {...a11yProps(7)} />
-            <Tab label="Tooltip" {...a11yProps(8)} />
-            <Tab label="Typography" {...a11yProps(9)} />
-          </Tabs>
-        </AppBar>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons
+          aria-label="visible arrows tabs example"
+          sx={{
+            [`& .${tabsClasses.scrollButtons}`]: {
+              "&.Mui-disabled": { opacity: 0.3 },
+            },
+          }}
+        >
+          <Tab label="Avatar" {...a11yProps(0)} />
+          <Tab label="Badge" {...a11yProps(1)} />
+          <Tab label="Chip" {...a11yProps(2)} />
+          <Tab label="Divider" {...a11yProps(3)} />
+          <Tab label="Icons" {...a11yProps(4)} />
+          <Tab label="Material Icons" {...a11yProps(5)} />
+          <Tab label="List" {...a11yProps(6)} />
+          <Tab label="Table" {...a11yProps(7)} />
+          <Tab label="Tooltip" {...a11yProps(8)} />
+          <Tab label="Typography" {...a11yProps(9)} />
+        </Tabs>
+
         <TabPanel value={value} index={0} dir={theme.direction}>
           <Avatar />
         </TabPanel>

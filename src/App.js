@@ -6,6 +6,7 @@ import DataDisplayComponents from "./routes/DataDisplay";
 import Home from "./routes/Home";
 import Feedback from "./routes/Feedback";
 import Navigation from "./routes/Navigation";
+import Surfaces from "./routes/Surfaces";
 
 function App() {
   const router = createBrowserRouter([
@@ -51,6 +52,15 @@ function App() {
         <>
           <ResponsiveAppBar />
           <Navigation />
+        </>
+      ),
+    },
+    {
+      path: "/surfaces",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <Surfaces />
         </>
       ),
     },

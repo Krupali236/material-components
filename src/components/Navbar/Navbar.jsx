@@ -20,6 +20,7 @@ const pages = [
   { name: "Data Display", path: "/datadisplay" },
   { name: "Feedback", path: "/feedback" },
   { name: "Navigation", path: "/navigation" },
+  { name: "Surfaces", path: "/surfaces" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function ResponsiveAppBar() {
