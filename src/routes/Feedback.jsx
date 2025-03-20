@@ -7,19 +7,12 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 // import { green } from "@mui/material/colors";
 import Box from "@mui/material/Box";
-import Avatar from "../pages/Avatar";
-import Badge from "../pages/Badge";
-import Chip from "../pages/Chip";
-import Divider from "../pages/Divider";
-import Icons from "../pages/Icons";
-import MaterialIcon from "../pages/MaterialIcon";
-import List from "../pages/List";
-import Table from "../pages/Table";
-import Tooltip from "../pages/Tooltip";
-import Typographi from "../pages/Typography";
 import Alert from "../pages/Alert";
 import Backdrop from "../pages/Backdrop";
 import Dialog from "../pages/Dialog";
+import Progress from "../pages/Progress";
+import Skeleton from "../pages/Skeleton";
+import Snackbar from "../pages/Snackbar";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -95,13 +88,13 @@ export default function Feedback() {
           <Dialog />
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
-          ..
+          <Progress />
         </TabPanel>
         <TabPanel value={value} index={4} dir={theme.direction}>
-          ..
+          <Skeleton />
         </TabPanel>
         <TabPanel value={value} index={5} dir={theme.direction}>
-          ..
+          <Snackbar />
         </TabPanel>
       </Box>
     </div>
