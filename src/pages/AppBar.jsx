@@ -7,10 +7,10 @@ import DrawerAppBar from "../components/Surfaces/AppBar/DrawerAppBar";
 import PrimarySearchAppBar from "../components/Surfaces/AppBar/PrimarySearchAppBar";
 import DenseAppBar from "../components/Surfaces/AppBar/DenseAppBar";
 import ProminentAppBar from "../components/Surfaces/AppBar/ProminentAppBar";
-import BottomAppBar from "../components/Surfaces/AppBar/BottomAppBar";
-import HideAppBar from "../components/Surfaces/AppBar/HideAppBar";
-import ElevateAppBar from "../components/Surfaces/AppBar/ElevateAppBar";
-import BackToTop from "../components/Surfaces/AppBar/BackToTop";
+// import BottomAppBar from "../components/Surfaces/AppBar/BottomAppBar";
+// import HideAppBar from "../components/Surfaces/AppBar/HideAppBar";
+// import ElevateAppBar from "../components/Surfaces/AppBar/ElevateAppBar";
+// import BackToTop from "../components/Surfaces/AppBar/BackToTop";
 import EnableColorOnDarkAppBar from "../components/Surfaces/AppBar/EnableColorOnDarkAppBar";
 
 const AppBar = () => {

@@ -7,6 +7,9 @@ import Home from "./routes/Home";
 import Feedback from "./routes/Feedback";
 import Navigation from "./routes/Navigation";
 import Surfaces from "./routes/Surfaces";
+import Layout from "./routes/Layout";
+import Utils from "./routes/Utils";
+import Lab from "./routes/Lab";
 
 function App() {
   const router = createBrowserRouter([
@@ -61,6 +64,33 @@ function App() {
         <>
           <ResponsiveAppBar />
           <Surfaces />
+        </>
+      ),
+    },
+    {
+      path: "/layout",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <Layout />
+        </>
+      ),
+    },
+    {
+      path: "/utils",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <Utils />
+        </>
+      ),
+    },
+    {
+      path: "/lab",
+      element: (
+        <>
+          <ResponsiveAppBar />
+          <Lab />
         </>
       ),
     },

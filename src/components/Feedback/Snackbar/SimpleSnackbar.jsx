@@ -6,11 +6,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import Stack from "@mui/material/Stack";
 import SnackbarContent from "@mui/material/SnackbarContent";
 
-const action = (
-  <Button color="secondary" size="small">
-    lorem ipsum dolorem
-  </Button>
-);
+// const action = (
+//   <Button color="secondary" size="small">
+//     lorem ipsum dolorem
+//   </Button>
+// );
 
 export default function SimpleSnackbar() {
   const [open, setOpen] = React.useState(false);

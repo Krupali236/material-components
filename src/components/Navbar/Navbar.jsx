@@ -21,6 +21,9 @@ const pages = [
   { name: "Feedback", path: "/feedback" },
   { name: "Navigation", path: "/navigation" },
   { name: "Surfaces", path: "/surfaces" },
+  { name: "Layout", path: "/layout" },
+  { name: "Utils", path: "/utils" },
+  { name: "Lab", path: "/lab" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function ResponsiveAppBar() {

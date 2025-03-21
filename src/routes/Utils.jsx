@@ -5,10 +5,10 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
-import Accordion from "../pages/Accordion";
-import AppBar from "../pages/AppBar";
-import Card from "../pages/Card";
-import Paper from "../pages/Paper";
+import Modals from "../pages/Modals";
+import PopoverPage from "../pages/PopoverPage";
+import PoperPage from "../pages/PoperPage";
+import Transitions from "../pages/Transitions";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,7 +37,7 @@ function a11yProps(index) {
     "aria-controls": `action-tabpanel-${index}`,
   };
 }
-export default function Surfaces() {
+export default function Utils() {
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
 
@@ -65,23 +65,23 @@ export default function Surfaces() {
           },
         }}
       >
-        <Tab label="Accordion" {...a11yProps(0)} />
-        <Tab label="App Bar" {...a11yProps(1)} />
-        <Tab label="Card" {...a11yProps(2)} />
-        <Tab label="Paper" {...a11yProps(3)} />
+        <Tab label="Modal" {...a11yProps(0)} />
+        <Tab label="Popover" {...a11yProps(1)} />
+        <Tab label="Popper" {...a11yProps(2)} />
+        <Tab label="Transitions" {...a11yProps(3)} />
       </Tabs>
 
       <TabPanel value={value} index={0} dir={theme.direction}>
-        <Accordion />
+        <Modals />
       </TabPanel>
       <TabPanel value={value} index={1} dir={theme.direction}>
-        <AppBar />
+        <PopoverPage />
       </TabPanel>
       <TabPanel value={value} index={2} dir={theme.direction}>
-        <Card />
+        <PoperPage />
       </TabPanel>
       <TabPanel value={value} index={3} dir={theme.direction}>
-        <Paper />
+        <Transitions />
       </TabPanel>
     </Box>
   );

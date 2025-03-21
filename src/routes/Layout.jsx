@@ -5,10 +5,12 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
-import Accordion from "../pages/Accordion";
-import AppBar from "../pages/AppBar";
-import Card from "../pages/Card";
-import Paper from "../pages/Paper";
+import BoxPage from "../pages/Box";
+import Container from "../pages/Container";
+import GridV2Page from "../pages/GridV2Page";
+import GridPage from "../pages/GridPage";
+import StackPage from "../pages/StackPage";
+import ImageListPage from "../pages/ImageListPage";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,7 +39,7 @@ function a11yProps(index) {
     "aria-controls": `action-tabpanel-${index}`,
   };
 }
-export default function Surfaces() {
+export default function Layout() {
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
 
@@ -65,23 +67,31 @@ export default function Surfaces() {
           },
         }}
       >
-        <Tab label="Accordion" {...a11yProps(0)} />
-        <Tab label="App Bar" {...a11yProps(1)} />
-        <Tab label="Card" {...a11yProps(2)} />
-        <Tab label="Paper" {...a11yProps(3)} />
+        <Tab label="Box" {...a11yProps(0)} />
+        <Tab label="Container" {...a11yProps(1)} />
+        <Tab label="Grid Version 2" {...a11yProps(2)} />
+        <Tab label="Grid" {...a11yProps(3)} />
+        <Tab label="Stack" {...a11yProps(4)} />
+        <Tab label="ImageList" {...a11yProps(5)} />
       </Tabs>
 
       <TabPanel value={value} index={0} dir={theme.direction}>
-        <Accordion />
+        <BoxPage />
       </TabPanel>
       <TabPanel value={value} index={1} dir={theme.direction}>
-        <AppBar />
+        <Container />
       </TabPanel>
       <TabPanel value={value} index={2} dir={theme.direction}>
-        <Card />
+        <GridV2Page />
       </TabPanel>
       <TabPanel value={value} index={3} dir={theme.direction}>
-        <Paper />
+        <GridPage />
+      </TabPanel>
+      <TabPanel value={value} index={4} dir={theme.direction}>
+        <StackPage />
+      </TabPanel>
+      <TabPanel value={value} index={5} dir={theme.direction}>
+        <ImageListPage />
       </TabPanel>
     </Box>
   );
