@@ -52,7 +52,7 @@ export default function FixedBottomNavigation() {
             bottom: 0,
             left: 0,
             right: 0,
-            width: { xs: 400, sm: 350, md: 400, lg: 500 },
+            width: { xs: 400, sm: 350, md: 400, lg: "100%" },
           }}
           elevation={3}
         >
