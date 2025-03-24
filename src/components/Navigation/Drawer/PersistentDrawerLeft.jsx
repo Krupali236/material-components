@@ -91,7 +91,9 @@ export default function PersistentDrawerLeft() {
   return (
     <div>
       <h3>Persistent drawer</h3>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
         <CssBaseline />
         <AppBar position="relative" open={open} sx={{ height: 100 }}>
           <Toolbar>
@@ -168,12 +170,18 @@ export default function PersistentDrawerLeft() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             alignItems: "center",
+            justifyContent: "center",
+            margin: 0,
           }}
         >
           <DrawerHeader />
-          <Typography sx={{ marginBottom: 2, width: 800 }}>
+          <Typography
+            sx={{
+              marginBottom: 2,
+              width: { xs: 300, sm: 350, md: 500, lg: 800 },
+            }}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
             dolor purus non enim praesent elementum facilisis leo vel. Risus at
@@ -188,7 +196,12 @@ export default function PersistentDrawerLeft() {
             consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
             donec massa sapien faucibus et molestie ac.
           </Typography>
-          <Typography sx={{ marginBottom: 2, width: 800 }}>
+          <Typography
+            sx={{
+              marginBottom: 2,
+              width: { xs: 300, sm: 350, md: 500, lg: 800 },
+            }}
+          >
             Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
             ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
             elementum integer enim neque volutpat ac tincidunt. Ornare

@@ -15,7 +15,7 @@ export default function SimpleBottomNavigation() {
   return (
     <div>
       <h3>Bottom navigation</h3>
-      <Box sx={{ width: 500 }}>
+      <Box sx={{ width: { xs: 200, sm: 300, md: 400, lg: 500 } }}>
         <BottomNavigation
           showLabels
           value={value}
@@ -31,7 +31,7 @@ export default function SimpleBottomNavigation() {
 
       <h3>Bottom navigation with no label</h3>
       <BottomNavigation
-        sx={{ width: 500 }}
+        sx={{ width: { xs: 250, sm: 350, md: 400, lg: 500 } }}
         value={value}
         onChange={handleChange}
       >

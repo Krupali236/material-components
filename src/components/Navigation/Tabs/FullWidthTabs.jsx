@@ -51,7 +51,12 @@ export default function FullWidthTabs() {
   return (
     <div>
       <h3>Full width</h3>
-      <Box sx={{ bgcolor: "background.paper", width: 500 }}>
+      <Box
+        sx={{
+          bgcolor: "background.paper",
+          width: { xs: 300, sm: 350, md: 500, lg: 500 },
+        }}
+      >
         <AppBar position="static">
           <Tabs
             value={value}

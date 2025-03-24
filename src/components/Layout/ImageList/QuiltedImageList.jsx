@@ -16,7 +16,11 @@ export default function QuiltedImageList() {
     <>
       <h3>Quilted image list</h3>
       <ImageList
-        sx={{ width: 500, height: 450 }}
+        sx={{
+          width: { xs: 300, sm: 300, md: 400, lg: 500 },
+          // height: 450
+          height: { xs: 750, sm: 600, md: 500, lg: 450 },
+        }}
         variant="quilted"
         cols={4}
         rowHeight={121}

@@ -10,7 +10,13 @@ export default function TitlebarImageList() {
   return (
     <>
       <h3>Image list with title bars</h3>
-      <ImageList sx={{ width: 500, height: 450 }}>
+      <ImageList
+        sx={{
+          width: { xs: 300, sm: 300, md: 400, lg: 500 },
+          //  height: 450
+          height: { xs: 850, sm: 600, md: 500, lg: 450 },
+        }}
+      >
         <ImageListItem key="Subheader" cols={2}>
           <ListSubheader component="div">December</ListSubheader>
         </ImageListItem>

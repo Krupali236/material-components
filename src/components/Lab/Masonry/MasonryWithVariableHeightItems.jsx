@@ -19,23 +19,38 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
 }));
 
 export default function MasonryWithVariableHeightItems() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100); // Increase delay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div>
-      <h3>Items with variable height</h3>
-      <Box sx={{ width: 500, minHeight: 377 }}>
-        <Masonry columns={3} spacing={2}>
+    <Box
+      sx={{
+        width: { xs: "90%", sm: "80%", md: 600, lg: 700 },
+        p: 2,
+      }}
+    >
+      <h3>Items with Variable Height</h3>
+
+      {mounted && ( // Only render Masonry after delay
+        <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
           {heights.map((height, index) => (
-            <Paper key={index}>
+            <Paper key={index} elevation={3} sx={{ p: 1 }}>
               <StyledAccordion sx={{ minHeight: height }}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                   <Typography>Accordion {index + 1}</Typography>
                 </AccordionSummary>
-                <AccordionDetails>Contents</AccordionDetails>
+                <AccordionDetails>
+                  <Typography>Contents</Typography>
+                </AccordionDetails>
               </StyledAccordion>
             </Paper>
           ))}
         </Masonry>
-      </Box>
-    </div>
+      )}
+    </Box>
   );
 }

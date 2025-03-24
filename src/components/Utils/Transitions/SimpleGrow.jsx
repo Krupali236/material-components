@@ -6,8 +6,15 @@ import Grow from "@mui/material/Grow";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
 const icon = (
-  <Paper sx={{ m: 1, width: 100, height: 100 }} elevation={4}>
-    <svg>
+  <Paper
+    sx={{
+      m: 1,
+      width: { xs: 80, sm: 100, md: 150 },
+      height: { xs: 80, sm: 100, md: 150 },
+    }}
+    elevation={4}
+  >
+    <svg width="100%" height="100%" viewBox="0 0 100 100">
       <Box
         component="polygon"
         points="0,100 50,00, 100,100"

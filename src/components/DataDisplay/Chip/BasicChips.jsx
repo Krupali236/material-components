@@ -58,7 +58,7 @@ export default function BasicChips() {
       </Stack>
 
       <h3>Clickable and deletable</h3>
-      <Stack direction="row" spacing={1}>
+      <Stack direction="row" spacing={1} sx={{ maxWidth: 300 }}>
         <Chip
           label="Clickable Deletable"
           onClick={handleClick}
@@ -90,7 +90,7 @@ export default function BasicChips() {
       </Stack>
 
       <h3>Custom delete icon</h3>
-      <Stack direction="row" spacing={1}>
+      <Stack direction="column" spacing={1} sx={{ maxWidth: 300 }}>
         <Chip
           label="Custom delete icon"
           onClick={handleClick}

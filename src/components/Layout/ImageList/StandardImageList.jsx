@@ -6,7 +6,15 @@ export default function StandardImageList() {
   return (
     <>
       <h3>Standard image list</h3>
-      <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+      <ImageList
+        sx={{
+          width: { xs: 300, sm: 300, md: 400, lg: 500 },
+          //  height: 450
+          height: { xs: 670, sm: 600, md: 500, lg: 450 },
+        }}
+        cols={3}
+        rowHeight={164}
+      >
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img

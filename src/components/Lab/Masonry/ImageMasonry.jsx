@@ -15,29 +15,39 @@ const Label = styled(Paper)(({ theme }) => ({
 }));
 
 export default function ImageMasonry() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100); // Slightly longer delay
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div>
       <h3>Image masonry</h3>
-      <Box sx={{ width: 500, minHeight: 829 }}>
-        <Masonry columns={3} spacing={2}>
-          {itemData.map((item, index) => (
-            <div key={index}>
-              <Label>{index + 1}</Label>
-              <img
-                srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=162&auto=format`}
-                alt={item.title}
-                loading="lazy"
-                style={{
-                  borderBottomLeftRadius: 4,
-                  borderBottomRightRadius: 4,
-                  display: "block",
-                  width: "100%",
-                }}
-              />
-            </div>
-          ))}
-        </Masonry>
+      <Box
+        sx={{ width: { xs: 300, sm: 300, md: 400, lg: 500 }, minHeight: 829 }}
+      >
+        {mounted && ( // Only render Masonry after delay
+          <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
+            {itemData.map((item, index) => (
+              <div key={index}>
+                <Label>{index + 1}</Label>
+                <img
+                  srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
+                  src={`${item.img}?w=162&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                  style={{
+                    borderBottomLeftRadius: 4,
+                    borderBottomRightRadius: 4,
+                    display: "block",
+                    width: "100%",
+                  }}
+                />
+              </div>
+            ))}
+          </Masonry>
+        )}
       </Box>
     </div>
   );

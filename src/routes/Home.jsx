@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 
 export default function Home() {
   return (
-    <Card sx={{ minWidth: 275, width: 500, height: 300, margin: "50px auto" }}>
+    <Card sx={{ minWidth: 275, width: 350, height: 300, margin: "50px auto" }}>
       <CardContent>
         <Typography gutterBottom sx={{ color: "text.secondary", fontSize: 18 }}>
           Hello

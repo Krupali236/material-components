@@ -32,7 +32,7 @@ export default function CheckboxesTags() {
             </li>
           );
         }}
-        style={{ width: 500 }}
+        style={{ width: 500, maxWidth: 300 }}
         renderInput={(params) => (
           <TextField {...params} label="Checkboxes" placeholder="Favorites" />
         )}

@@ -20,8 +20,9 @@ export default function CustomImageList() {
       <h3>Custom image list</h3>
       <ImageList
         sx={{
-          width: 500,
-          height: 450,
+          width: { xs: 300, sm: 300, md: 400, lg: 500 },
+          // height: 450,
+          height: { xs: 1820, sm: 700, md: 500, lg: 450 },
           // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
           transform: "translateZ(0)",
         }}

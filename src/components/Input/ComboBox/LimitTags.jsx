@@ -16,7 +16,7 @@ export default function LimitTags() {
         renderInput={(params) => (
           <TextField {...params} label="limitTags" placeholder="Favorites" />
         )}
-        sx={{ width: "500px" }}
+        sx={{ width: "500px", maxWidth: 300 }}
       />
     </div>
   );

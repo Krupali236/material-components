@@ -15,17 +15,28 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function FixedColumns() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100); // Slightly longer delay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
       <h3>Columns</h3>
-      <Box sx={{ width: 500, minHeight: 253 }}>
-        <Masonry columns={4} spacing={2}>
-          {heights.map((height, index) => (
-            <Item key={index} sx={{ height }}>
-              {index + 1}
-            </Item>
-          ))}
-        </Masonry>
+      <Box
+        sx={{ width: { xs: 300, sm: 300, md: 400, lg: 500 }, minHeight: 253 }}
+      >
+        {mounted && ( // Prevents Masonry from rendering immediately
+          <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
+            {heights.map((height, index) => (
+              <Item key={index} sx={{ height }}>
+                {index + 1}
+              </Item>
+            ))}
+          </Masonry>
+        )}
       </Box>
     </div>
   );

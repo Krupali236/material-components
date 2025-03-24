@@ -55,7 +55,7 @@ export default function IconMenu() {
       </Paper>
 
       <h3>Dense menu</h3>
-      <Paper sx={{ width: 320 }}>
+      <Paper sx={{ width: 320, maxWidth: "100%" }}>
         <MenuList dense>
           <MenuItem>
             <ListItemText inset>Single</ListItemText>

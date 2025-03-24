@@ -16,8 +16,8 @@ const TimelinePage = () => {
     <div style={{ margin: "15px" }}>
       <BasicTimeline />
       <LeftPositionedTimeline />
-      <AlternateTimeline />
-      <AlternateReverseTimeline />
+      {/* <AlternateTimeline />  */}
+      {/* <AlternateReverseTimeline /> */}
       <ColorsTimeline />
       <OutlinedTimeline />
       <OppositeContentTimeline />

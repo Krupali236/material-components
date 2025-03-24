@@ -72,7 +72,7 @@ export default function PositionedSnackbar() {
   return (
     <div>
       <h3>Position</h3>
-      <Box sx={{ width: 500 }}>
+      <Box sx={{ width: { xs: 200, sm: 300, md: 400, lg: 500 } }}>
         {buttons}
         <Snackbar
           anchorOrigin={{ vertical, horizontal }}

@@ -7,7 +7,7 @@ export default function FloatingActionButtonExtendedSize() {
   return (
     <div>
       <h3>Extended Size</h3>
-      <Box sx={{ "& > :not(style)": { m: 1 } }}>
+      <Box sx={{ "& > :not(style)": { m: 1 }, maxWidth: 300 }}>
         <Fab variant="extended" size="small" color="primary">
           <NavigationIcon sx={{ mr: 1 }} />
           Extended

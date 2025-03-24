@@ -85,7 +85,13 @@ export default function RouterBreadcrumbs() {
   return (
     <div>
       <h3>Integration with react-router</h3>
-      <Box sx={{ display: "flex", flexDirection: "column", width: 360 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: { xs: 300, sm: 300, md: 320, lg: 360 },
+        }}
+      >
         <Page />
         <Box
           sx={{ bgcolor: "background.paper", mt: 1 }}

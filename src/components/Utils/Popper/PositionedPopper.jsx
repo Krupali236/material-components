@@ -21,7 +21,7 @@ export default function PositionedPopper() {
   return (
     <div>
       <h3>Positioned popper</h3>
-      <Box sx={{ width: 500 }}>
+      <Box sx={{ width: { xs: 300, sm: 300, md: 400, lg: 500 } }}>
         <Popper
           // Note: The following zIndex style is specifically for documentation purposes and may not be necessary in your application.
           sx={{ zIndex: 1200 }}

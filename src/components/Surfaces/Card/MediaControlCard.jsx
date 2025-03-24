@@ -16,7 +16,9 @@ export default function MediaControlCard() {
   return (
     <>
       <h3>UI Controls</h3>
-      <Card sx={{ display: "flex", width: "max-content" }}>
+      <Card
+        sx={{ display: "flex", width: { xs: 300, sm: 300, md: 400, lg: 500 } }}
+      >
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent sx={{ flex: "1 0 auto" }}>
             <Typography component="div" variant="h5">

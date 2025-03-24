@@ -8,7 +8,7 @@ export default function PositionedTooltips() {
   return (
     <div>
       <h3>Positioned tooltips</h3>
-      <Box sx={{ width: 500 }}>
+      <Box sx={{ width: 300 }}>
         <Grid container sx={{ justifyContent: "center" }}>
           <Grid item>
             <Tooltip title="Add" placement="top-start">

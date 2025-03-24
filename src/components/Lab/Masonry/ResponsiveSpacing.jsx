@@ -15,17 +15,28 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function ResponsiveSpacing() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100); // Increased delay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
       <h3>Responsive Spacing</h3>
-      <Box sx={{ width: 500, minHeight: 377 }}>
-        <Masonry columns={3} spacing={{ xs: 1, sm: 2, md: 3 }}>
-          {heights.map((height, index) => (
-            <Item key={index} sx={{ height }}>
-              {index + 1}
-            </Item>
-          ))}
-        </Masonry>
+      <Box
+        sx={{ width: { xs: 300, sm: 300, md: 400, lg: 500 }, minHeight: 377 }}
+      >
+        {mounted && ( // Only render Masonry after delay
+          <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
+            {heights.map((height, index) => (
+              <Item key={index} sx={{ height }}>
+                {index + 1}
+              </Item>
+            ))}
+          </Masonry>
+        )}
       </Box>
     </div>
   );

@@ -8,7 +8,7 @@ export default function Sizes() {
   return (
     <div style={{ margin: "15px" }}>
       <h3>Small Size Combo-box</h3>
-      <Stack spacing={2} sx={{ width: 500 }}>
+      <Stack spacing={2} sx={{ width: 500, maxWidth: 300 }}>
         <Autocomplete
           id="size-small-standard"
           size="small"

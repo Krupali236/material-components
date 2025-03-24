@@ -17,23 +17,34 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function SSRMasonry() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100); // Increased delay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
       <h3>Server-side rendering</h3>
-      <Box sx={{ width: 500, minHeight: 393 }}>
-        <Masonry
-          columns={4}
-          spacing={2}
-          defaultHeight={450}
-          defaultColumns={4}
-          defaultSpacing={1}
-        >
-          {heights.map((height, index) => (
-            <Item key={index} sx={{ height }}>
-              {index + 1}
-            </Item>
-          ))}
-        </Masonry>
+      <Box
+        sx={{ width: { xs: 300, sm: 300, md: 400, lg: 500 }, minHeight: 393 }}
+      >
+        {mounted && ( // Only render Masonry after the delay
+          <Masonry
+            columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}
+            spacing={2}
+            defaultHeight={450}
+            defaultColumns={4}
+            defaultSpacing={1}
+          >
+            {heights.map((height, index) => (
+              <Item key={index} sx={{ height }}>
+                {index + 1}
+              </Item>
+            ))}
+          </Masonry>
+        )}
       </Box>
     </div>
   );

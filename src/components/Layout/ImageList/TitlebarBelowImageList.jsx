@@ -7,7 +7,13 @@ export default function TitlebarBelowImageList() {
   return (
     <>
       <h3>Title bar below image (standard)</h3>
-      <ImageList sx={{ width: 500, height: 450 }}>
+      <ImageList
+        sx={{
+          width: { xs: 300, sm: 300, md: 400, lg: 500 },
+          // height: 450
+          height: { xs: 970, sm: 600, md: 500, lg: 450 },
+        }}
+      >
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img

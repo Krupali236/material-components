@@ -15,17 +15,26 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function FixedSpacing() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100); // Increased delay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
       <h3>Spacing</h3>
-      <Box sx={{ width: 500, minHeight: 377 }}>
-        <Masonry columns={3} spacing={3}>
-          {heights.map((height, index) => (
-            <Item key={index} sx={{ height }}>
-              {index + 1}
-            </Item>
-          ))}
-        </Masonry>
+      <Box sx={{ width: { xs: 300, sm: 300, md: 400, lg: 500 }, minHeight: 377 }}>
+        {mounted && ( // Prevents Masonry from rendering immediately
+          <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3}>
+            {heights.map((height, index) => (
+              <Item key={index} sx={{ height }}>
+                {index + 1}
+              </Item>
+            ))}
+          </Masonry>
+        )}
       </Box>
     </div>
   );

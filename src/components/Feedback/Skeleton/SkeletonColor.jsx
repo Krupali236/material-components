@@ -10,7 +10,7 @@ export default function SkeletonColor() {
         sx={{
           bgcolor: "#121212",
           p: 8,
-          width: "90%",
+          width: { xs: 200, sm: 300, md: 600 },
           display: "flex",
           justifyContent: "center",
         }}
